@@ -1,44 +1,60 @@
-
-
-
-
-
-
 exports.min = function min (array) {
-  let minL=array[0];
-  for (let i=0; i<array.length; i++)
-  {
-    if (minL>array[i]){
-      minL = array[i];
-    }
-  }
-  if (array.length==0) {
+  
+  if (array === undefined) { 
     return 0;
+} else if (array[0] === undefined) { 
+    return 0;
+}  else {
+  var minNum = array[0];
+  for (var i = 0; i < array.length; i++){
+    if (minNum > array[i])   minNum = array[i];
   }
-  return minL;
-}
+
+  if (array.length === 0){
+    return 0;
+  }else 
+  {
+    return minNum;
+  }
+  
+}}
 
 exports.max = function max (array) {
-  let maxL=array[0];
-  for (let i=0; i<array.length; i++)
-  {
-    if (maxL<array[i]){
-      maxL = array[i];
-    }
-  }
-  if (array.length==0) {
+  if (array === undefined) { 
     return 0;
+} else if (array[0] === undefined) { 
+    return 0;
+}  else {
+  var maxNum = array[0];
+  for (var i = 0; i < array.length; i++){
+    if (maxNum < array[i])  maxNum = array[i];
   }
-  return maxL;
+
+  if (array.length === 0){
+    return 0;
+  }else 
+  {
+    return maxNum;
+  }
+}
 }
 
 exports.avg = function avg (array) {
-  let sum = 0;
-  for (let i=0; i<array.length; i++){
-    sum += array[i];
-  }
-  if (array.length==0) {
+  if (array === undefined) { 
     return 0;
+} else if (array[0] === undefined) { 
+    return 0;
+}  else {  
+  var avgNum = array[0];
+  for (var i = 1; i < array.length; i++){
+    avgNum += array[i];
   }
-  return (sum/array.length);
-}
+  
+  if (array.length === 0){
+    return 0;
+  }else 
+  {
+    avgNum /= array.length;
+    return avgNum;
+  }
+}}
