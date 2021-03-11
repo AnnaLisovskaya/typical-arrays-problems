@@ -1,61 +1,44 @@
 
-exports.min = function min (array) {
-  
-  if (array === undefined) { 
-    return 0;
-} else if (array[0] === undefined) { 
-    return 0;
-}  else {
-  var minNum = array[0];
-  for (var i = 0; i < array.length; i++){
-    if (minNum > array[i])   minNum = array[i];
-  }
 
-  if (array.length === 0){
-    return 0;
-  }else 
+
+
+
+
+exports.min = function min (array) {
+  let minL=array[0];
+  for (let i=0; i<array.length; i++)
   {
-    return minNum;
+    if (minL>array[i]){
+      minL = array[i];
+    }
   }
-  
-}}
+  if (array.length==0) {
+    return 0;
+  }
+  return minL;
+}
 
 exports.max = function max (array) {
-  if (array === undefined) { 
-    return 0;
-} else if (array[0] === undefined) { 
-    return 0;
-}  else {
-  var maxNum = array[0];
-  for (var i = 0; i < array.length; i++){
-    if (maxNum < array[i])  maxNum = array[i];
-  }
-
-  if (array.length === 0){
-    return 0;
-  }else 
+  let maxL=array[0];
+  for (let i=0; i<array.length; i++)
   {
-    return maxNum;
+    if (maxL<array[i]){
+      maxL = array[i];
+    }
   }
-}
+  if (array.length==0) {
+    return 0;
+  }
+  return maxL;
 }
 
 exports.avg = function avg (array) {
-  if (array === undefined) { 
-    return 0;
-} else if (array[0] === undefined) { 
-    return 0;
-}  else {  
-  var avgNum = array[0];
-  for (var i = 1; i < array.length; i++){
-    avgNum += array[i];
+  let sum = 0;
+  for (let i=0; i<array.length; i++){
+    sum += array[i];
   }
-  
-  if (array.length === 0){
+  if (array.length==0) {
     return 0;
-  }else 
-  {
-    avgNum /= array.length;
-    return avgNum;
   }
-}}
+  return (sum/array.length);
+}
